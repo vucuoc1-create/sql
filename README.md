@@ -1,31 +1,40 @@
-# [Thực hành] Xoá Cơ sở dữ liệu (CSDL) trên MySQL Workbench
+# [Thực hành] Tạo bảng trên MySQL Workbench
 
 ## 🎯 Mục tiêu
-Luyện tập các thao tác xóa Cơ sở dữ liệu (Database / Schema) trên MySQL Workbench bằng cả 2 phương pháp: Sử dụng giao diện đồ họa (GUI) và Sử dụng câu lệnh SQL.
-
-⚠️ **Lưu ý quan trọng:** Thao tác xóa CSDL (`DROP`) sẽ xóa vĩnh viễn toàn bộ cấu trúc bảng và dữ liệu bên trong CSDL đó. Cần cẩn trọng và đảm bảo đã sao lưu dữ liệu trước khi thực hiện.
+Luyện tập thao tác tạo CSDL mới và tạo Bảng (Table) với các thuộc tính cụ thể bằng câu lệnh SQL trên MySQL Workbench.
 
 ---
 
-## 🛠️ Phương pháp 1: Xoá CSDL bằng giao diện MySQL Workbench (GUI)
-
-### Các bước thực hiện:
-1. **Đăng nhập:** Bật MySQL Workbench và đăng nhập vào MySQL Connection bằng tài khoản `root`.
-2. **Chọn Schema:** Tại bảng **Navigator** (cột bên trái), chuyển sang tab **SCHEMAS**.
-3. **Thực hiện lệnh xóa:** 
-   * Nhấp chuột phải vào tên CSDL muốn xóa (ví dụ: `my_database`).
-   * Chọn **Drop Schema...**
-4. **Xác nhận xóa:** Một cửa sổ thông báo của Workbench xuất hiện:
-   * Chọn **Drop Now** để xóa ngay lập tức CSDL.
-   * *(Hoặc chọn Review SQL để xem lại câu lệnh DROP DATABASE trước khi thực thi).*
-5. **Kiểm tra kết quả:** Kiểm tra lại danh sách ở tab **SCHEMAS**, CSDL được chọn đã biến mất khỏi danh sách.
+## 📝 Đề bài
+1. Tạo một Cơ sở dữ liệu (CSDL) mới có tên là `demo`.
+2. Tạo bảng `Student` bên trong CSDL `demo` chứa các trường (thuộc tính):
+   - `id`: kiểu số nguyên (`int`)
+   - `name`: kiểu chuỗi ký tự (`varchar(200)`)
+   - `age`: kiểu số nguyên (`int`)
+   - `country`: kiểu chuỗi ký tự (`varchar(50)`)
 
 ---
 
-## 💻 Phương pháp 2: Xoá CSDL bằng câu lệnh SQL
+## 💻 Các bước thực hiện bằng câu lệnh SQL
 
-### Các bước thực hiện:
-1. **Mở cửa sổ soạn thảo:** Trong cửa sổ MySQL Workbench, nhấp vào biểu tượng **New Query Tab** (hình trang giấy có tia sét) hoặc nhấn `Ctrl + T`.
-2. **Viết câu lệnh SQL:** Nhập câu lệnh xóa CSDL:
-   ```sql
-   DROP DATABASE `my_database`;
+### Bước 1: Mở Query Tab
+1. Mở MySQL Workbench và kết nối tới Server.
+2. Tạo một file soạn thảo mới bằng cách bấm vào biểu tượng **New Query Tab** (hình trang giấy có tia sét) hoặc nhấn tổ hợp phím `Ctrl + T`.
+
+### Bước 2: Viết mã SQL
+Nhập đoạn mã lệnh SQL sau vào cửa sổ soạn thảo:
+
+```sql
+-- 1. Tạo CSDL có tên là demo
+CREATE DATABASE IF NOT EXISTS demo;
+
+-- 2. Chọn CSDL demo để thao tác
+USE demo;
+
+-- 3. Tạo bảng Student với các thuộc tính yêu cầu
+CREATE TABLE IF NOT EXISTS Student (
+    id INT,
+    name VARCHAR(200),
+    age INT,
+    country VARCHAR(50)
+);
