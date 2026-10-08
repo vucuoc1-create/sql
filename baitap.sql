@@ -1,29 +1,30 @@
--- Bước 1: Chọn cơ sở dữ liệu để làm việc
+-- Chuyển sang cơ sở dữ liệu Quản lý sinh viên
 USE QuanLySinhVien;
 
--- Yêu cầu 1: Hiển thị danh sách tất cả các học viên
-SELECT * 
-FROM Student;
-
--- Yêu cầu 2: Hiển thị danh sách các học viên đang theo học (Status = true/1)
+-- Yêu cầu 1: Hiển thị tất cả các sinh viên có tên bắt đầu bằng ký tự 'h' / 'H'
 SELECT * 
 FROM Student 
-WHERE Status = true;
+WHERE StudentName LIKE 'h%';
 
--- Yêu cầu 3: Hiển thị danh sách các môn học có số tín chỉ/thời gian học nhỏ hơn 10
+-- Yêu cầu 2: Hiển thị các thông tin lớp học có thời gian bắt đầu (StartDate) vào tháng 12
+SELECT * 
+FROM Class 
+WHERE MONTH(StartDate) = 12;
+
+-- Yêu cầu 3: Hiển thị tất cả các thông tin môn học có credit trong khoảng từ 3 đến 5
 SELECT * 
 FROM Subject 
-WHERE Credit < 10;
+WHERE Credit BETWEEN 3 AND 5;
 
--- Yêu cầu 4: Hiển thị danh sách học viên thuộc lớp 'A1'
-SELECT S.StudentId, S.StudentName, C.ClassName
-FROM Student S 
-JOIN Class C ON S.ClassId = C.ClassID
-WHERE C.ClassName = 'A1';
+-- Yêu cầu 4: Thay đổi mã lớp (ClassID) của sinh viên có tên 'Hung' thành 2
+UPDATE Student 
+SET ClassID = 2 
+WHERE StudentName = 'Hung';
 
--- Yêu cầu 5: Hiển thị điểm môn 'CF' của các học viên
-SELECT S.StudentId, S.StudentName, Sub.SubName, M.Mark
-FROM Student S 
-JOIN Mark M ON S.StudentId = M.StudentId 
+-- Yêu cầu 5: Hiển thị các thông tin: StudentName, SubName, Mark.
+-- Dữ liệu sắp xếp theo điểm thi (Mark) giảm dần, nếu trùng sắp xếp theo tên tăng dần (ASC)
+SELECT S.StudentName, Sub.SubName, M.Mark
+FROM Mark M
+JOIN Student S ON M.StudentId = S.StudentId
 JOIN Subject Sub ON M.SubId = Sub.SubId
-WHERE Sub.SubName = 'CF';
+ORDER BY M.Mark DESC, S.StudentName ASC;
