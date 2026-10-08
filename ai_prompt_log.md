@@ -1,15 +1,15 @@
-# AI Prompt Log - Tìm hiểu về thuật toán JOIN trong MySQL
+# AI Prompt Log - Tìm hiểu về SARGable và B-Tree Index
 
 ### User Prompt 1:
-> Trong cơ sở dữ liệu MySQL, mặc định từ khóa JOIN (khi không ghi rõ LEFT hay RIGHT) sẽ hoạt động như thế nào? Nó sẽ bỏ qua hay giữ lại các bản ghi không có sự trùng khớp ở cả hai bảng?
+> Trong MySQL, nếu tôi tạo Index cho một cột ngày tháng, nhưng trong mệnh đề WHERE tôi lại viết WHERE YEAR(col) = 2026, tại sao MySQL lại từ chối sử dụng Index và phải quét toàn bộ bảng (Full Table Scan)?
 
 ### AI Assistant Summary:
-> Từ khóa `JOIN` mặc định trong MySQL hoạt động như một `INNER JOIN`. Nó chỉ trả về các bản ghi có sự trùng khớp (khớp khóa ngoại/khóa chính) giữa cả hai bảng. Tất cả các bản ghi ở bảng trái không có tương ứng ở bảng phải (hoặc ngược lại) sẽ bị loại bỏ hoàn toàn khỏi tập kết quả.
+> Khi bọc một hàm (như `YEAR()`, `MONTH()`, `CONCAT()`) xung quanh cột dữ liệu, câu lệnh sẽ trở thành **Non-SARGable** (Search Argument Able). Cấu trúc cây B-Tree của Index sắp xếp dữ liệu theo giá trị thô của cột, chứ không sắp xếp theo kết quả của hàm. Để tìm dòng thỏa mãn, MySQL buộc phải duyệt qua từng dòng trong bảng, chạy hàm đó để lấy kết quả rồi mới so sánh với 2026, dẫn đến hiện tượng Full Table Scan.
 
 ---
 
 ### User Prompt 2:
-> Hãy phân tích hiệu năng (Performance) của việc dùng LEFT JOIN kết hợp IS NULL (Anti-Join) so với việc dùng subquery NOT IN khi muốn tìm kiếm các bản ghi không tồn tại trong bảng khác.
+> Khi thiết kế một Composite Index trong MySQL cho cột (transaction_type, created_at), thứ tự các cột trong Index có quan trọng không? Tôi nên đặt cột nào đứng trước?
 
 ### AI Assistant Summary:
-> Trong MySQL, `LEFT JOIN ... WHERE IS NULL` thường có hiệu năng tốt hơn hoặc bằng `NOT IN`. Nếu cột kiểm tra trong câu lệnh `NOT IN` chứa giá trị `NULL`, `NOT IN` có thể trả về tập kết quả rỗng hoàn toàn hoặc buộc MySQL phải thực hiện quét toàn bộ bảng (Full Table Scan). Mệnh đề `LEFT JOIN ... IS NULL` giúp MySQL Optimizer dễ dàng áp dụng chiến lược tìm kiếm thông qua chỉ mục (Index Lookup).
+> Thứ tự vô cùng quan trọng theo quy tắc **Leftmost Prefix** (Tiền tố trái nhất). Nên đặt cột có phép so sánh chính xác (Bằng `=`) như `transaction_type` đứng trước, và cột so sánh khoảng (Range `>=`, `<`) như `created_at` đứng sau. Nếu đặt cột Range lên trước, MySQL chỉ có thể dùng Index cho cột Range đó mà bỏ qua các cột đằng sau.
