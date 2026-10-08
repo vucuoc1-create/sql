@@ -1,31 +1,20 @@
 -- Bước 1: Sử dụng cơ sở dữ liệu QuanLySinhVien
 USE QuanLySinhVien;
 
--- Bước 2: Hiển thị số lượng sinh viên ở từng nơi
-SELECT Address, COUNT(StudentId) AS 'Số lượng học viên'
-FROM Student
-GROUP BY Address;
+-- 1. Hiển thị tất cả các thông tin môn học (bảng Subject) có credit lớn nhất
+SELECT * 
+FROM Subject 
+WHERE Credit = (SELECT MAX(Credit) FROM Subject);
 
--- Bước 3: Tính điểm trung bình các môn học của mỗi học viên
-SELECT S.StudentId, S.StudentName, AVG(Mark) AS 'Điểm trung bình'
-FROM Student S 
-JOIN Mark M ON S.StudentId = M.StudentId
-GROUP BY S.StudentId, S.StudentName;
+-- 2. Hiển thị các thông tin môn học có điểm thi lớn nhất
+SELECT S.SubId, S.SubName, S.Credit, S.Status, M.Mark 
+FROM Subject S 
+JOIN Mark M ON S.SubId = M.SubId 
+WHERE M.Mark = (SELECT MAX(Mark) FROM Mark);
 
--- Bước 4: Hiển thị những bạn học viên có điểm trung bình các môn học lớn hơn 15
-SELECT S.StudentId, S.StudentName, AVG(Mark) AS 'Điểm trung bình'
-FROM Student S 
-JOIN Mark M ON S.StudentId = M.StudentId
-GROUP BY S.StudentId, S.StudentName
-HAVING AVG(Mark) > 15;
-
--- Bước 5: Hiển thị thông tin các học viên có điểm trung bình lớn nhất
-SELECT S.StudentId, S.StudentName, AVG(Mark) AS 'Điểm trung bình lớn nhất'
-FROM Student S 
-JOIN Mark M ON S.StudentId = M.StudentId
-GROUP BY S.StudentId, S.StudentName
-HAVING AVG(Mark) >= ALL (
-    SELECT AVG(Mark) 
-    FROM Mark 
-    GROUP BY StudentId
-);
+-- 3. Hiển thị các thông tin sinh viên và điểm trung bình của mỗi sinh viên, xếp hạng theo thứ tự điểm giảm dần
+SELECT St.StudentId, St.StudentName, St.Address, St.Phone, St.Status, St.ClassId, AVG(M.Mark) AS 'Điểm trung bình'
+FROM Student St 
+LEFT JOIN Mark M ON St.StudentId = M.StudentId 
+GROUP BY St.StudentId, St.StudentName, St.Address, St.Phone, St.Status, St.ClassId
+ORDER BY AVG(M.Mark) DESC;
