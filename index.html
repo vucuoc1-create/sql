@@ -2,20 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Bài tập Nhúng CSS vào trang HTML</title>
+    <title>Bài tập Nhúng CSS</title>
+    
+    <!-- Liên kết External CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Internal CSS -->
     <style>
-        h1 {
+        .internal-heading {
             color: green;
         }
-        p {
+        .internal-paragraph {
             color: blue;
         }
     </style>
 </head>
 <body>
 
-    <h1>This is heading 1</h1>
-    <p>This is an ordinary paragraph. Notice that this text is blue. The default text color for a page is defined in the body selector.</p>
+    <!-- Phần 1: Inline Style -->
+    <h1 style="color: red;">Phần 1: This is heading 1 (Inline Style)</h1>
+    <p style="color: orange;">Phần 1: This is an ordinary paragraph using inline-style.</p>
+
+    <!-- Phần 2: Internal Style -->
+    <h1 class="internal-heading">Phần 2: This is heading 1 (Internal Style)</h1>
+    <p class="internal-paragraph">Phần 2: This is an ordinary paragraph using internal-style.</p>
+
+    <!-- Phần 3: External Style -->
+    <h1 class="external-heading">Phần 3: This is heading 1 (External Style)</h1>
+    <p class="external-paragraph">Phần 3: This is an ordinary paragraph using external-style.</p>
 
 </body>
 </html>
