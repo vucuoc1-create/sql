@@ -1,7 +1,8 @@
-/* External Style */
-.external-heading {
+/* Tác động trực tiếp vào thẻ h1 và p cho phần External */
+h1 {
     color: purple;
 }
-.external-paragraph {
+
+p {
     color: teal;
 }
