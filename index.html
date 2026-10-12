@@ -2,34 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Bài tập Nhúng CSS</title>
+    <title>Bài tập Nhúng CSS vào trang HTML</title>
     
     <!-- Liên kết External CSS -->
     <link rel="stylesheet" href="style.css">
 
     <!-- Internal CSS -->
     <style>
-        .internal-title {
+        .internal-heading {
             color: green;
         }
-        .internal-text {
+        .internal-paragraph {
             color: blue;
         }
     </style>
 </head>
 <body>
 
-    <!-- Phần 1: Inline Style (Dùng thuộc tính style trực tiếp) -->
-    <h1 style="color: red;">This is heading 1</h1>
-    <p style="color: orange;">This is an ordinary paragraph. Notice that this text is blue. The default text color for a page is defined in the body selector.</p>
+    <!-- Phần 1: Inline Style -->
+    <h1 style="color: green;">This is heading 1</h1>
+    <p style="color: blue;">This is an ordinary paragraph. Notice that this text is blue. The default text color for a page is defined in the body selector.</p>
 
-    <!-- Phần 2: Internal Style (Dùng class định nghĩa trong thẻ style ở head) -->
-    <h1 class="internal-title">This is heading 1</h1>
-    <p class="internal-text">This is an ordinary paragraph. Notice that this text is blue. The default text color for a page is defined in the body selector.</p>
+    <!-- Phần 2: Internal Style -->
+    <h1 class="internal-heading">This is heading 1</h1>
+    <p class="internal-paragraph">This is an ordinary paragraph. Notice that this text is blue. The default text color for a page is defined in the body selector.</p>
 
-    <!-- Phần 3: External Style (Dùng file style.css bên ngoài) -->
-    <h1>This is heading 1</h1>
-    <p>This is an ordinary paragraph. Notice that this text is blue. The default text color for a page is defined in the body selector.</p>
+    <!-- Phần 3: External Style -->
+    <h1 class="external-heading">This is heading 1</h1>
+    <p class="external-paragraph">This is an ordinary paragraph. Notice that this text is blue. The default text color for a page is defined in the body selector.</p>
 
 </body>
 </html>
