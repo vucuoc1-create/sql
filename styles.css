@@ -7,144 +7,232 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    padding: 20px;
+    background-color: #f0f2f5;
+    color: #050505;
+    padding-top: 60px; /* Đẩy nội dung xuống tránh bị header cố định che khuất */
 }
 
-/* Định dạng Header */
-header {
-    background: #35424a;
-    color: #ffffff;
-    padding: 20px;
-    text-align: center;
-    border-bottom: #e8491d 4px solid;
+/* 1. Fixed Header Styling */
+.fb-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 56px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
 }
 
-/* Định dạng Nav & Menu */
-nav {
-    background-color: #000000;
-    border: 1px solid #CDCDCD;
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-#menu {
-    height: 30px;
-    padding: 0;
-    margin: 0;
+.fb-logo {
+    color: #1877f2;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: -1px;
 }
 
-#menu ul, #menu li {
-    padding: 0;
-    margin: 0;
+.search-input {
+    background-color: #f0f2f5;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 16px;
+    outline: none;
+    font-size: 14px;
 }
 
-#menu li {
-    position: relative;
-    float: left;
+.header-center {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-icon {
+    font-size: 20px;
+    padding: 10px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.nav-icon:hover, .nav-icon.active {
+    background-color: #f0f2f5;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-profile {
+    font-weight: bold;
+}
+
+.menu-btn {
+    background-color: #e4e6eb;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* 2. Container bố cục 3 cột (Sidebar trái + Nội dung + Sidebar phải) */
+.fb-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+/* Sidebar Trái & Phải chung */
+aside {
+    width: 280px;
+    position: sticky;
+    top: 76px;
+    height: calc(100vh - 80px);
+    overflow-y: auto;
+}
+
+.sidebar-left ul, .sidebar-right ul {
     list-style: none;
 }
 
-#menu li a {
-    width: 100px;
-    height: 30px;
-    display: block;
+.sidebar-left li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
     text-decoration: none;
-    text-align: center;
-    line-height: 30px;
-    background-color: black;
-    color: white;
+    color: #050505;
+    font-weight: 500;
+    border-radius: 8px;
 }
 
-#menu ul ul li a {
-    width: 200px;
-    text-align: left;
+.sidebar-left li a:hover {
+    background-color: #e4e6eb;
+}
+
+/* Sidebar Phải */
+.sidebar-right h3 {
+    color: #65676b;
+    font-size: 16px;
+    margin-bottom: 12px;
     padding-left: 10px;
 }
 
-#menu li a:hover {
-    background-color: red;
-}
-
-#menu ul ul {
-    position: absolute;
-    top: 30px;
-    left: 0;
-    visibility: hidden;
-    z-index: 100;
-}
-
-#menu ul li:hover ul {
-    visibility: visible;
-}
-
-/* Khung chứa Section và Aside */
-.main-container {
+.sidebar-right li {
+    padding: 8px 10px;
+    border-radius: 8px;
+    cursor: pointer;
     display: flex;
-    gap: 20px;
-    margin-top: 20px;
-    clear: both;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
 }
 
-/* Định dạng Section */
-section {
-    flex: 3;
+.sidebar-right li:hover {
+    background-color: #e4e6eb;
 }
 
-article {
-    background: #ffffff;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+.online-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #31a24c;
+    border-radius: 50%;
+    display: inline-block;
 }
 
-article h2 {
-    color: #35424a;
+/* 3. Phần Nội dung chính (News Feed) */
+.main-content {
+    flex: 1;
+    max-width: 590px;
+    margin: 0 20px;
+}
+
+.post-box, .feed-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.post-input-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     margin-bottom: 10px;
 }
 
-/* Định dạng Aside */
-aside {
+.avatar {
+    width: 40px;
+    height: 40px;
+    background-color: #1877f2;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.post-input {
     flex: 1;
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    height: fit-content;
+    background-color: #f0f2f5;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 16px;
+    outline: none;
 }
 
-aside h3 {
-    margin-bottom: 15px;
-    color: #35424a;
-    border-bottom: 2px solid #e8491d;
-    padding-bottom: 5px;
+.post-actions {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 8px;
 }
 
-aside ul {
-    list-style: none;
+.post-actions button {
+    background: none;
+    border: none;
+    font-weight: 600;
+    color: #65676b;
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 6px;
 }
 
-aside ul li {
-    padding: 8px 0;
-    border-bottom: 1px solid #eee;
+.post-actions button:hover {
+    background-color: #f0f2f5;
 }
 
-aside ul li a {
-    color: #333;
-    text-decoration: none;
+.feed-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
 }
 
-aside ul li a:hover {
-    color: #e8491d;
+.feed-user-info h4 {
+    font-size: 15px;
 }
 
-/* Định dạng Footer */
-footer {
-    background: #35424a;
-    color: #ffffff;
-    text-align: center;
-    padding: 15px;
-    margin-top: 20px;
-    border-radius: 5px;
-    clear: both;
+.time {
+    font-size: 12px;
+    color: #65676b;
+}
+
+.feed-body {
+    font-size: 15px;
+    line-height: 1.5;
 }
