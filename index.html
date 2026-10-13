@@ -3,64 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Web Design Layout</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Website Xem Hoạt Hình Trực Tuyến An Toàn Cho Trẻ Em</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header của trang -->
-    <header class="header">
-        <h1>Trang Web Responsive</h1>
-        <p>Thực hành thiết kế bố cục thích ứng với mọi kích thước màn hình</p>
+
+    <!-- Phần Header -->
+    <header id="header">
+        <div class="logo">
+            <h1>🎨 KidToon HD</h1>
+        </div>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Tìm kiếm phim hoạt hình...">
+            <button onclick="searchMovies()">Tìm</button>
+        </div>
     </header>
 
-    <!-- Thanh điều hướng (Navigation) -->
-    <nav class="navbar">
+    <!-- Phần Head-link (Thanh điều hướng) -->
+    <nav class="head-link">
         <ul>
-            <li><a href="#">Trang chủ</a></li>
-            <li><a href="#">Giới thiệu</a></li>
-            <li><a href="#">Dịch vụ</a></li>
-            <li><a href="#">Tin tức</a></li>
-            <li><a href="#">Liên hệ</a></li>
+            <li><a href="#" class="active">Trang Chủ</a></li>
+            <li><a href="#">Mới Cập Nhật</a></li>
+            <li><a href="#">Xem Nhiều Nhất</a></li>
+            <li><a href="#">Thuyết Minh HD</a></li>
+            <li><a href="#">Liên Hệ</a></li>
         </ul>
     </nav>
 
-    <!-- Khung nội dung chính chứa Main Content và Sidebar -->
-    <div class="container">
-        <!-- Phần nội dung chính -->
-        <main class="main-content">
-            <h2>Bài viết nổi bật</h2>
-            <p>Responsive Web Design (RWD) là phương pháp thiết kế web giúp trang hiển thị tối ưu trên nhiều thiết bị có kích thước màn hình khác nhau như máy tính, máy tính bảng và điện thoại di động.</p>
-            <div class="card-grid">
-                <div class="card">
-                    <h3>HTML5 &amp; CSS3</h3>
-                    <p>Nền tảng xây dựng cấu trúc và định dạng giao diện trang web hiện đại.</p>
-                </div>
-                <div class="card">
-                    <h3>Flexbox Layout</h3>
-                    <p>Công cụ hỗ trợ sắp xếp các phần tử linh hoạt theo hàng hoặc cột.</p>
-                </div>
-                <div class="card">
-                    <h3>Media Queries</h3>
-                    <p>Kỹ thuật CSS cho phép áp dụng các kiểu dáng khác nhau tùy thuộc vào thiết bị.</p>
-                </div>
-            </div>
-        </main>
-
-        <!-- Sidebar bên phải / bên dưới -->
-        <aside class="sidebar">
-            <h3>Danh mục</h3>
-            <ul>
-                <li><a href="#">Lập trình Web</a></li>
-                <li><a href="#">Thiết kế Giao diện</a></li>
-                <li><a href="#">Kinh nghiệm thực tập</a></li>
-                <li><a href="#">Tài liệu học tập</a></li>
+    <!-- Phần Main Content -->
+    <div class="main-container">
+        <!-- Left Content: Menu danh sách video -->
+        <aside class="left-content">
+            <h3>Danh Sách Phim</h3>
+            <ul class="video-menu" id="videoMenu">
+                <li class="video-item active" data-type="video" data-src="https://www.w3schools.com/html/mov_bbb.mp4" data-title="Big Buck Bunny - Bản Thuyết Minh HD">
+                    🐰 Big Buck Bunny (Thuyết Minh HD)
+                </li>
+                <li class="video-item" data-type="youtube" data-src="https://www.youtube.com/embed/tgbNymZ7vqY" data-title="Tom & Jerry - Tập Đặc Biệt">
+                    🐱 Tom & Jerry - Tập Đặc Biệt
+                </li>
+                <li class="video-item" data-type="video" data-src="https://www.w3schools.com/html/movie.mp4" data-title="Elephant Dream - Hoạt Hình 3D">
+                    🐘 Elephant Dream - Hoạt Hình 3D
+                </li>
+                <li class="video-item" data-type="youtube" data-src="https://www.youtube.com/embed/kJQP7kiw5Fk" data-title="Despicable Me - Minions Cuội">
+                    🍌 Minions - Vui Nhộn Nhất
+                </li>
             </ul>
         </aside>
+
+        <!-- Right Content: Hiển thị nội dung video được chọn -->
+        <main class="right-content">
+            <h2 id="videoTitle">🐰 Big Buck Bunny (Thuyết Minh HD)</h2>
+            <div class="video-player-container" id="playerContainer">
+                <!-- Mặc định hiển thị video đầu tiên -->
+                <video id="htmlVideoPlayer" controls autoplay>
+                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                    Trình duyệt của bạn không hỗ trợ thẻ video.
+                </video>
+            </div>
+            <div class="video-info">
+                <p><strong>Chất lượng:</strong> Full HD 1080p | <strong>Audio:</strong> Thuyết Minh Tiếng Việt</p>
+                <p>Nội dung phim được kiểm duyệt kỹ càng, an toàn tuyệt đối cho trẻ em, không chứa quảng cáo gây gián đoạn.</p>
+            </div>
+        </main>
     </div>
 
-    <!-- Chân trang (Footer) -->
-    <footer class="footer">
-        <p>&copy; 2026 Vũ Tử Quang. Bản quyền thuộc về tác giả.</p>
+    <!-- Phần Footer -->
+    <footer id="footer">
+        <p>&copy; 2026 - Website Xem Hoạt Hình Trực Tuyến An Toàn Cho Trẻ Em. Không quảng cáo - Tải cực nhanh.</p>
     </footer>
+
+    <!-- JavaScript xử lý chọn video và tìm kiếm -->
+    <script>
+        const videoItems = document.querySelectorAll('.video-item');
+        const videoTitle = document.getElementById('videoTitle');
+        const playerContainer = document.getElementById('playerContainer');
+
+        videoItems.forEach(item => {
+            item.addEventListener('click', function() {
+                // Xóa active cũ, thêm active mới cho menu
+                document.querySelector('.video-item.active').classList.remove('active');
+                this.classList.add('active');
+
+                const type = this.getAttribute('data-type');
+                const src = this.getAttribute('data-src');
+                const title = this.getAttribute('data-title');
+
+                videoTitle.textContent = title;
+
+                // Thay đổi khung phát video tùy thuộc vào loại (HTML5 Video hoặc Youtube Iframe)
+                if (type === 'video') {
+                    playerContainer.innerHTML = `
+                        <video id="htmlVideoPlayer" controls autoplay>
+                            <source src="${src}" type="video/mp4">
+                            Trình duyệt của bạn không hỗ trợ thẻ video.
+                        </video>
+                    `;
+                } else if (type === 'youtube') {
+                    playerContainer.innerHTML = `
+                        <iframe src="${src}?autoplay=1" title="${title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    `;
+                }
+            });
+        });
+
+        function searchMovies() {
+            let keyword = document.getElementById('searchInput').value.toLowerCase();
+            videoItems.forEach(item => {
+                let text = item.textContent.toLowerCase();
+                if (text.includes(keyword)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </body>
 </html>
