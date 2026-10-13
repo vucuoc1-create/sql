@@ -1,60 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MetricsHub Dashboard - Refactored</title>
-    <!-- Bootstrap 5 CSS -->
+    <title>Simple Bootstrap Gallery</title>
+    <!-- Nhúng Bootstrap 5 CSS từ CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        .gallery-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        .gallery-img:hover {
+            transform: scale(1.03);
+        }
+    </style>
 </head>
-<body>
+<body class="bg-light py-5">
 
-    <!-- 1. NAVBAR (Sử dụng Flexbox) -->
-    <nav class="navbar-flex">
-        <div class="nav-logo">Logo</div>
-        <div class="nav-links">
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">VeryLongGermanWordForDashboard</a>
-            <a href="#">Contact</a>
-        </div>
-        <div class="nav-profile">Profile</div>
-    </nav>
-
-    <!-- 2. DASHBOARD (Sử dụng CSS Grid dạng Bento Box, làm phẳng DOM) -->
-    <main class="dashboard-grid">
-        <div class="widget widget-large">Chart A (Span 2 rows)</div>
-        <div class="widget">Chart B</div>
-        <div class="widget">Chart C</div>
-        <div class="widget">Chart D</div>
-    </main>
-
-    <!-- 3. PRICING SECTION (Sử dụng hệ thống 12 cột của Bootstrap 5) -->
-    <section class="container py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Responsive Image Gallery</h2>
+        
         <div class="row g-4">
-            <div class="col-12 col-md-4">
-                <div class="card h-100 shadow-sm text-center p-4">
-                    <h3>Gói Cơ bản</h3>
-                    <p class="text-muted">Dành cho cá nhân khởi đầu</p>
+            <!-- Ảnh 1 -->
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="card shadow-sm border-0">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" class="gallery-img" alt="Gallery Image 1">
                 </div>
             </div>
-            <div class="col-12 col-md-4">
-                <div class="card h-100 shadow-sm text-center p-4 border-primary">
-                    <h3>Gói Nâng cao</h3>
-                    <p class="text-muted">Dành cho nhóm phát triển</p>
+            
+            <!-- Ảnh 2 -->
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="card shadow-sm border-0">
+                    <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05" class="gallery-img" alt="Gallery Image 2">
                 </div>
             </div>
-            <div class="col-12 col-md-4">
-                <div class="card h-100 shadow-sm text-center p-4">
-                    <h3>Gói Doanh nghiệp</h3>
-                    <p class="text-muted">Dành cho tổ chức lớn</p>
+            
+            <!-- Ảnh 3 -->
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="card shadow-sm border-0">
+                    <img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d" class="gallery-img" alt="Gallery Image 3">
+                </div>
+            </div>
+            
+            <!-- Ảnh 4 -->
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="card shadow-sm border-0">
+                    <img src="https://images.unsplash.com/photo-1426604966848-d7adacbd02bff" class="gallery-img" alt="Gallery Image 4">
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Bootstrap JS Bundle -->
+    <!-- Nhúng Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
