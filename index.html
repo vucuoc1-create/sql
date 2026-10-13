@@ -1,124 +1,39 @@
-<!DOCTYPE html>
-<html lang="vi">
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Xem Hoạt Hình Trực Tuyến An Toàn Cho Trẻ Em</title>
-    <!-- Đã sửa tên file CSS thành styles.css để nhận diện chính xác giao diện -->
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <title>Login</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="text-center">
 
-    <!-- Phần Header -->
-    <header id="header">
-        <div class="logo">
-            <h1>🎨 KidToon HD</h1>
-        </div>
-        <div class="search-box">
-            <input type="text" id="searchInput" placeholder="Tìm kiếm phim hoạt hình...">
-            <button onclick="searchMovies()">Tìm</button>
-        </div>
-    </header>
-
-    <!-- Phần Head-link (Thanh điều hướng) -->
-    <nav class="head-link">
-        <ul>
-            <li><a href="#" class="active">Trang Chủ</a></li>
-            <li><a href="#">Mới Cập Nhật</a></li>
-            <li><a href="#">Xem Nhiều Nhất</a></li>
-            <li><a href="#">Thuyết Minh HD</a></li>
-            <li><a href="#">Liên Hệ</a></li>
-        </ul>
-    </nav>
-
-    <!-- Phần Main Content -->
-    <div class="main-container">
-        <!-- Left Content: Menu danh sách video -->
-        <aside class="left-content">
-            <h3>Danh Sách Phim</h3>
-            <ul class="video-menu" id="videoMenu">
-                <li class="video-item active" data-type="video" data-src="https://www.w3schools.com/html/mov_bbb.mp4" data-title="Big Buck Bunny - Bản Thuyết Minh HD">
-                    🐰 Big Buck Bunny (Thuyết Minh HD)
-                </li>
-                <li class="video-item" data-type="youtube" data-src="https://www.youtube.com/embed/tgbNymZ7vqY" data-title="Tom & Jerry - Tập Đặc Biệt">
-                    🐱 Tom & Jerry - Tập Đặc Biệt
-                </li>
-                <li class="video-item" data-type="video" data-src="https://www.w3schools.com/html/movie.mp4" data-title="Elephant Dream - Hoạt Hình 3D">
-                    🐘 Elephant Dream - Hoạt Hình 3D
-                </li>
-                <li class="video-item" data-type="youtube" data-src="https://www.youtube.com/embed/kJQP7kiw5Fk" data-title="Despicable Me - Minions Vui Nhộn">
-                    🍌 Minions - Vui Nhộn Nhất
-                </li>
-            </ul>
-        </aside>
-
-        <!-- Right Content: Hiển thị nội dung video được chọn -->
-        <main class="right-content">
-            <h2 id="videoTitle">🐰 Big Buck Bunny (Thuyết Minh HD)</h2>
-            <div class="video-player-container" id="playerContainer">
-                <!-- Mặc định hiển thị video đầu tiên -->
-                <video id="htmlVideoPlayer" controls autoplay>
-                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-                    Trình duyệt của bạn không hỗ trợ thẻ video.
-                </video>
-            </div>
-            <div class="video-info">
-                <p><strong>Chất lượng:</strong> Full HD 1080p | <strong>Audio:</strong> Thuyết Minh Tiếng Việt</p>
-                <p>Nội dung phim được kiểm duyệt kỹ càng, an toàn tuyệt đối cho trẻ em, không chứa quảng cáo gây gián đoạn.</p>
-            </div>
-        </main>
+<form class="form-signin">
+    <img class="mb-4" src="bootstrap.png" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+    
+    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+    
+    <div class="checkbox mb-3">
+        <label>
+            <input type="checkbox" value="remember-me"> Remember me
+        </label>
     </div>
+    
+    <button class="btn btn-lg btn-primary w-100" type="submit">Sign in</button>
+    <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+</form>
 
-    <!-- Phần Footer -->
-    <footer id="footer">
-        <p>&copy; 2026 - Website Xem Hoạt Hình Trực Tuyến An Toàn Cho Trẻ Em. Không quảng cáo - Tải cực nhanh.</p>
-    </footer>
-
-    <!-- JavaScript xử lý chọn video và tìm kiếm -->
-    <script>
-        const videoItems = document.querySelectorAll('.video-item');
-        const videoTitle = document.getElementById('videoTitle');
-        const playerContainer = document.getElementById('playerContainer');
-
-        videoItems.forEach(item => {
-            item.addEventListener('click', function() {
-                // Xóa active cũ, thêm active mới cho menu
-                document.querySelector('.video-item.active').classList.remove('active');
-                this.classList.add('active');
-
-                const type = this.getAttribute('data-type');
-                const src = this.getAttribute('data-src');
-                const title = this.getAttribute('data-title');
-
-                videoTitle.textContent = title;
-
-                // Thay đổi khung phát video tùy thuộc vào loại (HTML5 Video hoặc Youtube Iframe)
-                if (type === 'video') {
-                    playerContainer.innerHTML = `
-                        <video id="htmlVideoPlayer" controls autoplay>
-                            <source src="${src}" type="video/mp4">
-                            Trình duyệt của bạn không hỗ trợ thẻ video.
-                        </video>
-                    `;
-                } else if (type === 'youtube') {
-                    playerContainer.innerHTML = `
-                        <iframe src="${src}?autoplay=1" title="${title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    `;
-                }
-            });
-        });
-
-        function searchMovies() {
-            let keyword = document.getElementById('searchInput').value.toLowerCase();
-            videoItems.forEach(item => {
-                let text = item.textContent.toLowerCase();
-                if (text.includes(keyword)) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        }
-    </script>
+<!-- Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
 </body>
 </html>
