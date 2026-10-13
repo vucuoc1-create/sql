@@ -3,108 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Facebook - Giao diện giản lược</title>
+    <title>Responsive Web Design Layout</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- 1. FIXED HEADER (Thanh trên cùng cố định) -->
-    <header class="fb-header">
-        <div class="header-left">
-            <span class="fb-logo">facebook</span>
-            <input type="text" placeholder="Tìm kiếm trên Facebook" class="search-input">
-        </div>
-        <div class="header-center">
-            <a href="#" class="nav-icon active">🏠</a>
-            <a href="#" class="nav-icon">📺</a>
-            <a href="#" class="nav-icon">👥</a>
-            <a href="#" class="nav-icon">🎮</a>
-        </div>
-        <div class="header-right">
-            <span class="user-name">Vũ Tử Quang</span>
-            <button class="circle-btn">🔔</button>
-            <button class="circle-btn">💬</button>
-        </div>
+    <!-- Header của trang -->
+    <header class="header">
+        <h1>Trang Web Responsive</h1>
+        <p>Thực hành thiết kế bố cục thích ứng với mọi kích thước màn hình</p>
     </header>
 
-    <!-- Khung bố cục chứa Sidebar & Nội dung chính -->
-    <div class="fb-container">
-        <!-- 2. SIDEBAR TRÁI -->
-        <aside class="sidebar-left">
-            <ul>
-                <li><a href="#">👤 Vũ Tử Quang</a></li>
-                <li><a href="#">👥 Bạn bè</a></li>
-                <li><a href="#">💾 Đã lưu</a></li>
-                <li><a href="#">🕒 Kỷ niệm</a></li>
-                <li><a href="#">📰 Bảng feed</a></li>
-                <li><a href="#">⚙️ Cài đặt</a></li>
-            </ul>
-        </aside>
+    <!-- Thanh điều hướng (Navigation) -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#">Giới thiệu</a></li>
+            <li><a href="#">Dịch vụ</a></li>
+            <li><a href="#">Tin tức</a></li>
+            <li><a href="#">Liên hệ</a></li>
+        </ul>
+    </nav>
 
-        <!-- 3. NỘI DUNG CHÍNH (NEWS FEED) -->
-        <section class="main-content">
-            <!-- Khung tạo bài viết -->
-            <div class="create-post">
-                <div class="post-top">
-                    <div class="avatar">Q</div>
-                    <input type="text" placeholder="Quang ơi, bạn đang nghĩ gì thế?" class="post-input">
+    <!-- Khung nội dung chính chứa Main Content và Sidebar -->
+    <div class="container">
+        <!-- Phần nội dung chính -->
+        <main class="main-content">
+            <h2>Bài viết nổi bật</h2>
+            <p>Responsive Web Design (RWD) là phương pháp thiết kế web giúp trang hiển thị tối ưu trên nhiều thiết bị có kích thước màn hình khác nhau như máy tính, máy tính bảng và điện thoại di động.</p>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>HTML5 &amp; CSS3</h3>
+                    <p>Nền tảng xây dựng cấu trúc và định dạng giao diện trang web hiện đại.</p>
                 </div>
-                <hr class="divider">
-                <div class="post-bottom">
-                    <button class="action-btn">🔴 Video trực tiếp</button>
-                    <button class="action-btn">🖼️ Ảnh/video</button>
-                    <button class="action-btn">😀 Cảm xúc/hoạt động</button>
+                <div class="card">
+                    <h3>Flexbox Layout</h3>
+                    <p>Công cụ hỗ trợ sắp xếp các phần tử linh hoạt theo hàng hoặc cột.</p>
+                </div>
+                <div class="card">
+                    <h3>Media Queries</h3>
+                    <p>Kỹ thuật CSS cho phép áp dụng các kiểu dáng khác nhau tùy thuộc vào thiết bị.</p>
                 </div>
             </div>
+        </main>
 
-            <!-- Bài viết 1 -->
-            <article class="feed-card">
-                <div class="card-header">
-                    <div class="avatar">C</div>
-                    <div class="user-info">
-                        <h4>CodeGym Việt Nam</h4>
-                        <span class="post-time">3 giờ trước · 🌍</span>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <p>Chào mừng bạn đến với bài tập thiết kế giao diện giản lược của Facebook sử dụng HTML5 và CSS3!</p>
-                </div>
-                <div class="card-actions">
-                    <button>👍 Thích</button>
-                    <button>💬 Bình luận</button>
-                    <button>↗️ Chia sẻ</button>
-                </div>
-            </article>
-
-            <!-- Bài viết 2 -->
-            <article class="feed-card">
-                <div class="card-header">
-                    <div class="avatar">Q</div>
-                    <div class="user-info">
-                        <h4>Vũ Tử Quang</h4>
-                        <span class="post-time">Vừa xong · 🌍</span>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <p>Đã hoàn thành Fixed Header và Sidebar chuẩn phong cách Facebook!</p>
-                </div>
-                <div class="card-actions">
-                    <button>👍 Thích</button>
-                    <button>💬 Bình luận</button>
-                    <button>↗️ Chia sẻ</button>
-                </div>
-            </article>
-        </section>
-
-        <!-- 4. SIDEBAR PHẢI (Người liên hệ) -->
-        <aside class="sidebar-right">
-            <h3>Người liên hệ</h3>
+        <!-- Sidebar bên phải / bên dưới -->
+        <aside class="sidebar">
+            <h3>Danh mục</h3>
             <ul>
-                <li><span class="status-dot"></span> Nguyễn Tuấn Anh</li>
-                <li><span class="status-dot"></span> Lý Trường Sơn</li>
-                <li><span class="status-dot"></span> Vũ Tiến Quyết</li>
-                <li><span class="status-dot"></span> La Văn Quyền</li>
+                <li><a href="#">Lập trình Web</a></li>
+                <li><a href="#">Thiết kế Giao diện</a></li>
+                <li><a href="#">Kinh nghiệm thực tập</a></li>
+                <li><a href="#">Tài liệu học tập</a></li>
             </ul>
         </aside>
     </div>
+
+    <!-- Chân trang (Footer) -->
+    <footer class="footer">
+        <p>&copy; 2026 Vũ Tử Quang. Bản quyền thuộc về tác giả.</p>
+    </footer>
 </body>
 </html>
