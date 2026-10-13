@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Facebook - Giản lược</title>
+    <title>Facebook - Giao diện giản lược</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- 1. Fixed Header ở trên cùng -->
+    <!-- 1. FIXED HEADER (Thanh trên cùng cố định) -->
     <header class="fb-header">
         <div class="header-left">
             <span class="fb-logo">facebook</span>
@@ -20,77 +20,89 @@
             <a href="#" class="nav-icon">🎮</a>
         </div>
         <div class="header-right">
-            <span class="user-profile">Quang</span>
-            <button class="menu-btn">Menu</button>
+            <span class="user-name">Vũ Tử Quang</span>
+            <button class="circle-btn">🔔</button>
+            <button class="circle-btn">💬</button>
         </div>
     </header>
 
-    <!-- Khung chứa tổng thể (Sidebar trái + Nội dung chính + Sidebar phải) -->
+    <!-- Khung bố cục chứa Sidebar & Nội dung chính -->
     <div class="fb-container">
-        <!-- 2. Sidebar Trái -->
+        <!-- 2. SIDEBAR TRÁI -->
         <aside class="sidebar-left">
             <ul>
                 <li><a href="#">👤 Vũ Tử Quang</a></li>
                 <li><a href="#">👥 Bạn bè</a></li>
                 <li><a href="#">💾 Đã lưu</a></li>
                 <li><a href="#">🕒 Kỷ niệm</a></li>
-                <li><a href="#">📰 bảng feed</a></li>
+                <li><a href="#">📰 Bảng feed</a></li>
+                <li><a href="#">⚙️ Cài đặt</a></li>
             </ul>
         </aside>
 
-        <!-- 3. Phần Nội dung chính (News Feed) -->
-        <main class="main-content">
-            <!-- Khung đăng bài -->
-            <div class="post-box">
-                <div class="post-input-container">
+        <!-- 3. NỘI DUNG CHÍNH (NEWS FEED) -->
+        <section class="main-content">
+            <!-- Khung tạo bài viết -->
+            <div class="create-post">
+                <div class="post-top">
                     <div class="avatar">Q</div>
-                    <input type="text" placeholder="Hôm nay bạn thế nào, Quang?" class="post-input">
+                    <input type="text" placeholder="Quang ơi, bạn đang nghĩ gì thế?" class="post-input">
                 </div>
-                <hr>
-                <div class="post-actions">
-                    <button>🔴 Video trực tiếp</>
-                    <button>🖼️ Ảnh/video</button>
-                    <button>😀 Cảm xúc/hoạt động</button>
+                <hr class="divider">
+                <div class="post-bottom">
+                    <button class="action-btn">🔴 Video trực tiếp</button>
+                    <button class="action-btn">🖼️ Ảnh/video</button>
+                    <button class="action-btn">😀 Cảm xúc/hoạt động</button>
                 </div>
             </div>
 
-            <!-- Bài viết mẫu 1 -->
-            <div class="feed-card">
-                <div class="feed-header">
-                    <div class="avatar">T</div>
-                    <div class="feed-user-info">
+            <!-- Bài viết 1 -->
+            <article class="feed-card">
+                <div class="card-header">
+                    <div class="avatar">C</div>
+                    <div class="user-info">
                         <h4>CodeGym Việt Nam</h4>
-                        <span class="time">2 giờ trước · 🌍</span>
+                        <span class="post-time">3 giờ trước · 🌍</span>
                     </div>
                 </div>
-                <div class="feed-body">
-                    <p>Chúc các bạn học viên hoàn thành tốt các bài thực hành thiết kế giao diện web với HTML và CSS!</p>
+                <div class="card-body">
+                    <p>Chào mừng bạn đến với bài tập thiết kế giao diện giản lược của Facebook sử dụng HTML5 và CSS3!</p>
                 </div>
-            </div>
+                <div class="card-actions">
+                    <button>👍 Thích</button>
+                    <button>💬 Bình luận</button>
+                    <button>↗️ Chia sẻ</button>
+                </div>
+            </article>
 
-            <!-- Bài viết mẫu 2 -->
-            <div class="feed-card">
-                <div class="feed-header">
+            <!-- Bài viết 2 -->
+            <article class="feed-card">
+                <div class="card-header">
                     <div class="avatar">Q</div>
-                    <div class="feed-user-info">
+                    <div class="user-info">
                         <h4>Vũ Tử Quang</h4>
-                        <span class="time">Hôm qua · 🌍</span>
+                        <span class="post-time">Vừa xong · 🌍</span>
                     </div>
                 </div>
-                <div class="feed-body">
-                    <p>Đang hoàn thành bài tập layout trang chủ Facebook sử dụng CSS thuần. Thật thú vị!</p>
+                <div class="card-body">
+                    <p>Đã hoàn thành Fixed Header và Sidebar chuẩn phong cách Facebook!</p>
                 </div>
-            </div>
-        </main>
+                <div class="card-actions">
+                    <button>👍 Thích</button>
+                    <button>💬 Bình luận</button>
+                    <button>↗️ Chia sẻ</button>
+                </div>
+            </article>
+        </section>
 
-        <!-- 4. Sidebar Phải (Danh sách liên hệ / Người liên hệ) -->
+        <!-- 4. SIDEBAR PHẢI (Người liên hệ) -->
         <aside class="sidebar-right">
             <h3>Người liên hệ</h3>
             <ul>
-                <li><span class="online-dot"></span> Nguyễn Tuấn Anh</li>
-                <li><span class="online-dot"></span> Lý Trường Sơn</li>
-                <li><span class="online-dot"></span> Vũ Tiến Quyết</li>
-                <li><span class="online-dot"></span> La Văn Quyền</li>
+                <li><span class="status-dot"></span> Nguyễn Tuấn Anh</li>
+                <li><span class="status-dot"></span> Lý Trường Sơn</li>
+                <li><span class="status-dot"></span> Vũ Tiến Quyết</li>
+                <li><span class="status-dot"></span> La Văn Quyền</li>
             </ul>
         </aside>
     </div>
