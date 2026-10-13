@@ -1,54 +1,24 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Đọc Truyện Ngắn</title>
-    <!-- Bước 6: Nhúng file styles.css -->
-    <link rel="stylesheet" href="styles.css">
+    <title>Sử dụng Boxmodel</title>
+    <style>
+        .boxmodel {
+            margin: 0 auto;
+            width: 800px;
+            border: 10px;
+            padding: 10px;
+            border-color: chartreuse aqua blue blueviolet;
+            border-style: solid;
+        }
+    </style>
 </head>
 <body>
-
-    <div class="container">
-        <!-- Bước 4: Tạo ảnh truyện đặt ở đầu trang -->
-        <div class="banner">
-            <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=80" alt="Bìa truyện ngắn">
-        </div>
-
-        <!-- Bước 7: Tiêu đề truyện được căn giữa, định dạng font & màu sắc trong CSS -->
-        <h1 class="main-title">Hành Trình Về Phương Nam</h1>
-
-        <!-- Bước 1 & Bước 5: Mục lục truyện sử dụng thẻ <h5> -->
-        <div class="toc-box">
-            <h2>Mục lục</h2>
-            <ul>
-                <li><a href="#chuong1"><h5>Chương 1: Khởi đầu chuyến đi</h5></a></li>
-                <li><a href="#chuong2"><h5>Chương 2: Đêm bên dòng sông</h5></a></li>
-                <li><a href="#chuong3"><h5>Chương 3: Điểm đến bình yên</h5></a></li>
-            </ul>
-        </div>
-
-        <!-- Bước 2 & Bước 3: Nội dung ứng với từng mục lục truyện và liên kết anchor -->
-        <div class="story-content">
-            <section id="chuong1">
-                <h3>Chương 1: Khởi đầu chuyến đi</h3>
-                <p>Buổi sáng hôm ấy, ánh nắng vàng rực rỡ chiếu rọi qua từng kẽ lá, đánh thức cả một vùng quê yên bình. Tiếng gà gáy vang vọng từ xa, hòa quyện cùng tiếng gió thổi xào xạc qua những hàng tre xanh ngắt. Tôi chuẩn bị chiếc ba lô quen thuộc, mang theo chút ít hành trang và cả những hoài bão tuổi trẻ để bước vào chuyến hành trình dài đầu tiên trong đời.</p>
-                <p>Con đường làng quanh co dẫn ra bến xe nhỏ ngập tràn mùi hương của lúa mới. Mọi thứ xung quanh dường như chậm lại, tạo nên một cảm giác thật thư thái và đầy hy vọng về những điều tốt đẹp đang chờ đón phía trước.</p>
-            </section>
-
-            <section id="chuong2">
-                <h3>Chương 2: Đêm bên dòng sông</h3>
-                <p>Khi màn đêm buông xuống, ánh trăng vằng vặc treo trên vòm trời cao vời vợi, soi bóng xuống mặt nước dòng sông phẳng lặng như gương. Ngồi bên đống lửa bập bùng cùng những người bạn mới quen, chúng tôi cùng nhau chia sẻ những câu chuyện giản dị, những tiếng cười vang vọng xóa tan đi cái lạnh của sương đêm.</p>
-                <p>Lúc ấy, nhìn ngắm bầu trời đầy sao và lắng nghe tiếng nước chảy róc rách bên tai, tôi chợt nhận ra rằng thế giới này rộng lớn biết bao nhiêu, và mỗi cuộc gặp gỡ trên đường đi đều là một món quà tuyệt vời của cuộc sống.</p>
-            </section>
-
-            <section id="chuong3">
-                <h3>Chương 3: Điểm đến bình yên</h3>
-                <p>Sau nhiều ngày rong ruổi trên những cung đường mới, cuối cùng tôi cũng đặt chân đến điểm hẹn – một thị trấn nhỏ nép mình bên sườn đồi thơ mộng. Không khí ở đây trong lành và mát mẻ, con người thì vô cùng thân thiện, cởi mở với những nụ cười luôn nở trên môi.</p>
-                <p>Chuyến đi khép lại nhưng mở ra trong tâm hồn tôi một chương mới đầy cảm xúc. Những trải nghiệm, bài học và tình cảm chân thành thu nhặt được dọc đường sẽ mãi là hành trang quý giá theo tôi suốt những chặng đường tương lai.</p>
-            </section>
-        </div>
+    <div class="boxmodel">
+        <p>Mô hình hộp trong CSS về cơ bản là một hộp bao quanh phần tử HTML. Nó bao gồm: lề (margin), viền (border), phần đệm (padding) và nội dung (content)</p>
+        <p>Mô hình hộp trong CSS về cơ bản là một hộp bao quanh phần tử HTML. Nó bao gồm: lề (margin), viền (border), phần đệm (padding) và nội dung (content)</p>
+        <p>Mô hình hộp trong CSS về cơ bản là một hộp bao quanh phần tử HTML. Nó bao gồm: lề (margin), viền (border), phần đệm (padding) và nội dung (content)</p>
     </div>
-
 </body>
 </html>
