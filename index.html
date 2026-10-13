@@ -3,72 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tạo Layout với các thẻ HTML5 và CSS</title>
+    <title>Facebook - Giản lược</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Sử dụng thẻ header cho phần đầu trang -->
-    <header>
-        <h1>Trang Web Của Tôi</h1>
-        <p>Thực hành thiết kế bố cục với các thẻ HTML5 ngữ nghĩa</p>
+    <!-- 1. Fixed Header ở trên cùng -->
+    <header class="fb-header">
+        <div class="header-left">
+            <span class="fb-logo">facebook</span>
+            <input type="text" placeholder="Tìm kiếm trên Facebook" class="search-input">
+        </div>
+        <div class="header-center">
+            <a href="#" class="nav-icon active">🏠</a>
+            <a href="#" class="nav-icon">📺</a>
+            <a href="#" class="nav-icon">👥</a>
+            <a href="#" class="nav-icon">🎮</a>
+        </div>
+        <div class="header-right">
+            <span class="user-profile">Quang</span>
+            <button class="menu-btn">Menu</button>
+        </div>
     </header>
 
-    <!-- Sử dụng thẻ nav cho menu điều hướng -->
-    <nav>
-        <div id="menu">
+    <!-- Khung chứa tổng thể (Sidebar trái + Nội dung chính + Sidebar phải) -->
+    <div class="fb-container">
+        <!-- 2. Sidebar Trái -->
+        <aside class="sidebar-left">
             <ul>
-                <li><a href="#">Sem 1</a>
-                    <ul>
-                        <li><a href="#">Computing Fundamental</a></li>
-                        <li><a href="#">C Programming</a></li>
-                        <li><a href="#">Building Dynamic Website</a></li>
-                        <li><a href="#">MS Transact-SQL</a></li>
-                        <li><a href="#">Project</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Sem 2 </a>
-                    <ul>
-                        <li><a href="#">Cloud Computing</a></li>
-                        <li><a href="#">APJ - I</a></li>
-                        <li><a href="#">APJ - II</a></li>
-                        <li><a href="#">APJ - III</a></li>
-                        <li><a href="#">eProject</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Sem 3</a></li>
-                <li><a href="#">Sem 4</a></li>
+                <li><a href="#">👤 Vũ Tử Quang</a></li>
+                <li><a href="#">👥 Bạn bè</a></li>
+                <li><a href="#">💾 Đã lưu</a></li>
+                <li><a href="#">🕒 Kỷ niệm</a></li>
+                <li><a href="#">📰 bảng feed</a></li>
             </ul>
-        </div>
-    </nav>
+        </aside>
 
-    <!-- Khung chứa nội dung chính và sidebar -->
-    <div class="main-container">
-        <!-- Sử dụng thẻ section và article cho nội dung chính -->
-        <section>
-            <article>
-                <h2>Bài viết 1: Giới thiệu HTML5 Semantic Tags</h2>
-                <p>Việc sử dụng các thẻ ngữ nghĩa giúp trình duyệt và công cụ tìm kiếm hiểu rõ hơn cấu trúc trang web.</p>
-            </article>
-            <article>
-                <h2>Bài viết 2: Lợi ích của CSS Layout</h2>
-                <p>Giúp bố cục trang web trở nên rõ ràng, chuyên nghiệp và tối ưu hiển thị trên nhiều thiết bị.</p>
-            </article>
-        </section>
+        <!-- 3. Phần Nội dung chính (News Feed) -->
+        <main class="main-content">
+            <!-- Khung đăng bài -->
+            <div class="post-box">
+                <div class="post-input-container">
+                    <div class="avatar">Q</div>
+                    <input type="text" placeholder="Hôm nay bạn thế nào, Quang?" class="post-input">
+                </div>
+                <hr>
+                <div class="post-actions">
+                    <button>🔴 Video trực tiếp</>
+                    <button>🖼️ Ảnh/video</button>
+                    <button>😀 Cảm xúc/hoạt động</button>
+                </div>
+            </div>
 
-        <!-- Sử dụng thẻ aside cho thanh bên (sidebar) -->
-        <aside>
-            <h3>Danh mục liên quan</h3>
+            <!-- Bài viết mẫu 1 -->
+            <div class="feed-card">
+                <div class="feed-header">
+                    <div class="avatar">T</div>
+                    <div class="feed-user-info">
+                        <h4>CodeGym Việt Nam</h4>
+                        <span class="time">2 giờ trước · 🌍</span>
+                    </div>
+                </div>
+                <div class="feed-body">
+                    <p>Chúc các bạn học viên hoàn thành tốt các bài thực hành thiết kế giao diện web với HTML và CSS!</p>
+                </div>
+            </div>
+
+            <!-- Bài viết mẫu 2 -->
+            <div class="feed-card">
+                <div class="feed-header">
+                    <div class="avatar">Q</div>
+                    <div class="feed-user-info">
+                        <h4>Vũ Tử Quang</h4>
+                        <span class="time">Hôm qua · 🌍</span>
+                    </div>
+                </div>
+                <div class="feed-body">
+                    <p>Đang hoàn thành bài tập layout trang chủ Facebook sử dụng CSS thuần. Thật thú vị!</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- 4. Sidebar Phải (Danh sách liên hệ / Người liên hệ) -->
+        <aside class="sidebar-right">
+            <h3>Người liên hệ</h3>
             <ul>
-                <li><a href="#">Lập trình Web cơ bản</a></li>
-                <li><a href="#">CSS Nâng cao</a></li>
-                <li><a href="#">JavaScript Framework</a></li>
+                <li><span class="online-dot"></span> Nguyễn Tuấn Anh</li>
+                <li><span class="online-dot"></span> Lý Trường Sơn</li>
+                <li><span class="online-dot"></span> Vũ Tiến Quyết</li>
+                <li><span class="online-dot"></span> La Văn Quyền</li>
             </ul>
         </aside>
     </div>
-
-    <!-- Sử dụng thẻ footer cho chân trang -->
-    <footer>
-        <p>&copy; 2026 - Bản quyền thuộc về Vũ Tử Quang</p>
-    </footer>
 </body>
 </html>
