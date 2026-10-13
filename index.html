@@ -2,59 +2,53 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Việt Nam - Bách khoa toàn thư mở Wikipedia</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        h1 {
-            font-size: 28px;
-            font-style: normal;
-            text-align: left;
-            border-bottom: 1px solid #a2a9b1;
-            padding-bottom: 5px;
-            color: #000;
-        }
-
-        .subtitle {
-            font-size: 14px;
-            font-style: italic;
-            text-align: left;
-            color: #555;
-            margin-bottom: 20px;
-        }
-
-        p {
-            font-size: 16px;
-            font-style: normal;
-            text-align: justify;
-            text-indent: 30px;
-            color: #222;
-            margin-bottom: 15px;
-        }
-
-        a {
-            color: #0645ad;
-            text-decoration: none;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Đọc Truyện Ngắn</title>
+    <!-- Bước 6: Nhúng file styles.css -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <h1>Việt Nam</h1>
-    <div class="subtitle">Bách khoa toàn thư mở Wikipedia</div>
+    <div class="container">
+        <!-- Bước 4: Tạo ảnh truyện đặt ở đầu trang -->
+        <div class="banner">
+            <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=80" alt="Bìa truyện ngắn">
+        </div>
 
-    <p><strong>Việt Nam</strong> (tên chính thức: <strong>Cộng hòa Xã hội chủ nghĩa Việt Nam</strong>) là một quốc gia nằm ở phía đông, ở giữa Lào và Campuchia, thuộc <a href="#">bán đảo Đông Dương</a>, thuộc khu vực Đông Nam Á thuộc châu Á.</p>
+        <!-- Bước 7: Tiêu đề truyện được căn giữa, định dạng font & màu sắc trong CSS -->
+        <h1 class="main-title">Hành Trình Về Phương Nam</h1>
 
-    <p>Phía bắc Việt Nam giáp với <a href="#">Trung Quốc</a>, phía tây Việt Nam giáp với <a href="#">Lào</a> và <a href="#">Campuchia</a>, phía tây nam giáp <a href="#">vịnh Thái Lan</a>, phía đông và phía nam giáp <a href="#">biển Đông</a> và có hơn 4.000 hòn đảo, bãi đá ngầm lớn nhỏ, gần và xa bờ, có vùng nội thủy, lãnh hải, vùng đặc quyền kinh tế và thềm lục địa được <a href="#">Chính phủ Việt Nam</a> xác định gần gấp ba lần diện tích đất liền (khoảng trên 1 triệu km²). Trên biển Đông có quần đảo <a href="#">Trường Sa</a> và <a href="#">Hoàng Sa</a> được Việt Nam tuyên bố chủ quyền nhưng đang trong vòng tranh chấp với các quốc gia <a href="#">Đài Loan</a>, <a href="#">Trung Quốc</a>, <a href="#">Malaysia</a> và <a href="#">Philippines</a>.</p>
+        <!-- Bước 1 & Bước 5: Mục lục truyện sử dụng thẻ <h5> -->
+        <div class="toc-box">
+            <h2>Mục lục</h2>
+            <ul>
+                <li><a href="#chuong1"><h5>Chương 1: Khởi đầu chuyến đi</h5></a></li>
+                <li><a href="#chuong2"><h5>Chương 2: Đêm bên dòng sông</h5></a></li>
+                <li><a href="#chuong3"><h5>Chương 3: Điểm đến bình yên</h5></a></li>
+            </ul>
+        </div>
 
-    <p>Việt Nam đã thiết lập mối <a href="#">quan hệ ngoại giao</a> với 178 quốc gia, quan hệ kinh tế – thương mại – đầu tư với trên 224 quốc gia và vùng lãnh thổ, là thành viên <a href="#">Liên Hợp Quốc</a>, <a href="#">ASEAN</a>, <a href="#">ASEM</a>, <a href="#">APEC</a>, <a href="#">WTO</a>, Tổ chức quốc tế Pháp ngữ, Phong trào không liên kết, <a href="#">UNESCO</a> và nhiều tổ chức quốc tế, khu vực khác. Kể từ năm 2000 Việt Nam là một trong những nước có mức tăng trưởng kinh tế nhanh nhất thế giới, tuy nhiên tốc độ tăng trưởng chậm lại trong những năm sau. Việc đổi mới kinh tế thành công đã dẫn đường cho Việt Nam trở thành thành viên của <a href="#">Tổ chức Thương mại Thế giới</a> vào năm 2007. Mặc dù đã có nhiều nỗ lực cải cách kinh tế – xã hội, Việt Nam vẫn còn gặp phải nhiều vấn đề tiêu cực như tỷ lệ hộ nghèo còn cao, <a href="#">bất bình đẳng về thu nhập</a> cao, dịch vụ chăm sóc sức khỏe kém và tình trạng <a href="#">bất bình đẳng giới</a> còn nhiều.</p>
+        <!-- Bước 2 & Bước 3: Nội dung ứng với từng mục lục truyện và liên kết anchor -->
+        <div class="story-content">
+            <section id="chuong1">
+                <h3>Chương 1: Khởi đầu chuyến đi</h3>
+                <p>Buổi sáng hôm ấy, ánh nắng vàng rực rỡ chiếu rọi qua từng kẽ lá, đánh thức cả một vùng quê yên bình. Tiếng gà gáy vang vọng từ xa, hòa quyện cùng tiếng gió thổi xào xạc qua những hàng tre xanh ngắt. Tôi chuẩn bị chiếc ba lô quen thuộc, mang theo chút ít hành trang và cả những hoài bão tuổi trẻ để bước vào chuyến hành trình dài đầu tiên trong đời.</p>
+                <p>Con đường làng quanh co dẫn ra bến xe nhỏ ngập tràn mùi hương của lúa mới. Mọi thứ xung quanh dường như chậm lại, tạo nên một cảm giác thật thư thái và đầy hy vọng về những điều tốt đẹp đang chờ đón phía trước.</p>
+            </section>
+
+            <section id="chuong2">
+                <h3>Chương 2: Đêm bên dòng sông</h3>
+                <p>Khi màn đêm buông xuống, ánh trăng vằng vặc treo trên vòm trời cao vời vợi, soi bóng xuống mặt nước dòng sông phẳng lặng như gương. Ngồi bên đống lửa bập bùng cùng những người bạn mới quen, chúng tôi cùng nhau chia sẻ những câu chuyện giản dị, những tiếng cười vang vọng xóa tan đi cái lạnh của sương đêm.</p>
+                <p>Lúc ấy, nhìn ngắm bầu trời đầy sao và lắng nghe tiếng nước chảy róc rách bên tai, tôi chợt nhận ra rằng thế giới này rộng lớn biết bao nhiêu, và mỗi cuộc gặp gỡ trên đường đi đều là một món quà tuyệt vời của cuộc sống.</p>
+            </section>
+
+            <section id="chuong3">
+                <h3>Chương 3: Điểm đến bình yên</h3>
+                <p>Sau nhiều ngày rong ruổi trên những cung đường mới, cuối cùng tôi cũng đặt chân đến điểm hẹn – một thị trấn nhỏ nép mình bên sườn đồi thơ mộng. Không khí ở đây trong lành và mát mẻ, con người thì vô cùng thân thiện, cởi mở với những nụ cười luôn nở trên môi.</p>
+                <p>Chuyến đi khép lại nhưng mở ra trong tâm hồn tôi một chương mới đầy cảm xúc. Những trải nghiệm, bài học và tình cảm chân thành thu nhặt được dọc đường sẽ mãi là hành trang quý giá theo tôi suốt những chặng đường tương lai.</p>
+            </section>
+        </div>
+    </div>
 
 </body>
 </html>
