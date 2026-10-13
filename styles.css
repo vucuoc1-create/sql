@@ -12,7 +12,7 @@ body {
     padding: 20px;
 }
 
-/* 1. Header Styling */
+/* Định dạng Header */
 header {
     background: #35424a;
     color: #ffffff;
@@ -21,7 +21,7 @@ header {
     border-bottom: #e8491d 4px solid;
 }
 
-/* 2. Nav & Menu Ngang Styling */
+/* Định dạng Nav & Menu */
 nav {
     background-color: #000000;
     border: 1px solid #CDCDCD;
@@ -77,7 +77,7 @@ nav {
     visibility: visible;
 }
 
-/* 3. Main Container (Section + Aside) */
+/* Khung chứa Section và Aside */
 .main-container {
     display: flex;
     gap: 20px;
@@ -85,7 +85,7 @@ nav {
     clear: both;
 }
 
-/* Section Styling */
+/* Định dạng Section */
 section {
     flex: 3;
 }
@@ -103,7 +103,7 @@ article h2 {
     margin-bottom: 10px;
 }
 
-/* Aside Styling */
+/* Định dạng Aside */
 aside {
     flex: 1;
     background: #ffffff;
@@ -138,7 +138,7 @@ aside ul li a:hover {
     color: #e8491d;
 }
 
-/* 4. Footer Styling */
+/* Định dạng Footer */
 footer {
     background: #35424a;
     color: #ffffff;
