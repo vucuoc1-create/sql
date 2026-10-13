@@ -1,167 +1,212 @@
-/* Thiết lập chung và Box-sizing */
+/* Cấu hình chung */
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
+    background-color: #f4f7f6;
     color: #333;
 }
 
-/* 1. Header Styling */
-.header {
-    background-color: #2c3e50;
-    color: #ffffff;
-    padding: 30px 20px;
-    text-align: center;
+/* Phần Header (Yêu cầu Trung bình: Giữ cố định header khi cuộn trang) */
+#header {
+    background-color: #ff6b6b;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.header h1 {
-    font-size: 28px;
-    margin-bottom: 8px;
+.logo h1 {
+    font-size: 24px;
 }
 
-/* 2. Navbar Styling */
-.navbar {
-    background-color: #34495e;
+.search-box {
+    display: flex;
+    gap: 10px;
 }
 
-.navbar ul {
+.search-box input {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    width: 220px;
+}
+
+.search-box button {
+    padding: 8px 15px;
+    background-color: #ff4757;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.search-box button:hover {
+    background-color: #ff334b;
+}
+
+/* Phần Head-link (Thanh điều hướng liên kết) */
+.head-link {
+    background-color: #2f3640;
+    padding: 10px 30px;
+}
+
+.head-link ul {
     list-style: none;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    gap: 25px;
 }
 
-.navbar li a {
-    color: #ffffff;
-    display: block;
-    padding: 12px 20px;
+/* Yêu cầu Trung bình: Bỏ gạch chân của link, khi chuyển link/hover bôi đậm và chuyển màu khác */
+.head-link a {
     text-decoration: none;
+    color: #f5f6fa;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.head-link a:hover, .head-link a.active {
+    color: #ffa502;
     font-weight: bold;
-    transition: background 0.3s;
+    text-shadow: 0 0 1px rgba(255,165,2,0.5);
 }
 
-.navbar li a:hover {
-    background-color: #1abc9c;
-}
-
-/* 3. Container Layout (Desktop mặc định) */
-.container {
+/* Layout Chính (Chia Left Content và Right Content) */
+.main-container {
     display: flex;
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 0 15px;
+    min-height: 70vh;
+    padding: 20px;
     gap: 20px;
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
-/* Main Content */
-.main-content {
-    flex: 3;
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 6px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.main-content h2 {
-    color: #2c3e50;
-    margin-bottom: 15px;
-}
-
-.card-grid {
-    display: flex;
-    gap: 15px;
-    margin-top: 20px;
-    flex-wrap: wrap;
-}
-
-.card {
+/* Left Content: Menu danh sách video */
+.left-content {
     flex: 1;
-    min-width: 200px;
-    background-color: #ecf0f1;
+    background: white;
+    border-radius: 8px;
     padding: 15px;
-    border-radius: 5px;
-    border-left: 4px solid #1abc9c;
-}
-
-.card h3 {
-    font-size: 16px;
-    margin-bottom: 8px;
-    color: #2c3e50;
-}
-
-/* Sidebar */
-.sidebar {
-    flex: 1;
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 6px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     height: fit-content;
 }
 
-.sidebar h3 {
-    color: #2c3e50;
-    margin-bottom: 12px;
-    border-bottom: 2px solid #1abc9c;
-    padding-bottom: 5px;
+.left-content h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #2f3640;
+    border-bottom: 2px solid #f1f2f6;
+    padding-bottom: 8px;
 }
 
-.sidebar ul {
+.video-menu {
     list-style: none;
 }
 
-.sidebar li {
-    padding: 8px 0;
-    border-bottom: 1px solid #eee;
+.video-item {
+    padding: 12px 10px;
+    margin-bottom: 8px;
+    background-color: #f1f2f6;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s, color 0.2s;
 }
 
-.sidebar li a {
-    color: #34495e;
-    text-decoration: none;
+.video-item:hover {
+    background-color: #dfe4ea;
+    color: #ff6b6b;
 }
 
-.sidebar li a:hover {
-    color: #1abc9c;
+.video-item.active {
+    background-color: #ff6b6b;
+    color: white;
+    font-weight: bold;
 }
 
-/* 4. Footer Styling */
-.footer {
-    background-color: #2c3e50;
-    color: #ffffff;
-    text-align: center;
+/* Right Content: Vùng hiển thị video */
+.right-content {
+    flex: 3;
+    background: white;
+    border-radius: 8px;
     padding: 20px;
-    margin-top: 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-/* ==========================================
-   RESPONSIVE WEB DESIGN (MEDIA QUERIES)
-   ========================================== */
+.right-content h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #2f3640;
+}
 
-/* Khi màn hình nhỏ hơn hoặc bằng 768px (Tablet & Mobile) */
+.video-player-container {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* Tỉ lệ khung hình 16:9 chuẩn */
+    background: #000;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.video-player-container video,
+.video-player-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.video-info p {
+    font-size: 14px;
+    color: #57606f;
+    margin-top: 5px;
+}
+
+/* Phần Footer */
+#footer {
+    background-color: #2f3640;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+/* Yêu cầu Nâng cao: Responsive (Tương thích với các màn hình khác nhau như điện thoại, máy tính bảng) */
 @media screen and (max-width: 768px) {
-    /* Chuyển container từ hàng ngang (flex) sang cột dọc */
-    .container {
+    .main-container {
         flex-direction: column;
+        padding: 10px;
     }
 
-    /* Menu chuyển thành dạng xếp chồng hoặc dàn đều */
-    .navbar ul {
+    #header {
         flex-direction: column;
+        gap: 10px;
         text-align: center;
     }
 
-    .navbar li a {
-        border-bottom: 1px solid #4e6d8d;
+    .search-box {
+        width: 100%;
+        justify-content: center;
     }
 
-    /* Các thẻ card hiển thị theo chiều dọc */
-    .card-grid {
-        flex-direction: column;
+    .head-link ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
     }
 }
