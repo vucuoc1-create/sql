@@ -1,34 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Tạo menu ngang</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạo Layout với các thẻ HTML5 và CSS</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="menu">
+    <!-- Phần đầu trang -->
+    <header>
+        <h1>Website Của Tôi</h1>
+        <p>Học thiết kế bố cục web với HTML5 và CSS</p>
+    </header>
+
+    <!-- Thanh điều hướng -->
+    <nav>
         <ul>
-            <li><a href="#">Sem 1</a>
-                <ul>
-                    <li><a href="#">Computing Fundamental</a></li>
-                    <li><a href="#">C Programming</a></li>
-                    <li><a href="#">Building Dynamic Website</a></li>
-                    <li><a href="#">MS Transact-SQL</a></li>
-                    <li><a href="#">Project</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Sem 2 </a>
-                <ul>
-                    <li><a href="#">Cloud Computing</a></li>
-                    <li><a href="#">APJ - I</a></li>
-                    <li><a href="#">APJ - II</a></li>
-                    <li><a href="#">APJ - III</a></li>
-                    <li><a href="#">eProject</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Sem 3</a></li>
-            <li><a href="#">Sem 4</a></li>
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#">Giới thiệu</a></li>
+            <li><a href="#">Dịch vụ</a></li>
+            <li><a href="#">Liên hệ</a></li>
         </ul>
+    </nav>
+
+    <!-- Khung chứa nội dung chính và sidebar -->
+    <div class="container">
+        <!-- Nội dung chính -->
+        <section>
+            <article>
+                <h2>Bài viết số 1: Giới thiệu về HTML5 Semantic Tags</h2>
+                <p>HTML5 giới thiệu nhiều thẻ ngữ nghĩa mới như <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code> và <code>&lt;footer&gt;</code> giúp trình đọc màn hình, công cụ tìm kiếm và lập trình viên dễ dàng hiểu được cấu trúc tài liệu.</p>
+            </article>
+            <article>
+                <h2>Bài viết số 2: Lợi ích của việc sử dụng CSS Layout</h2>
+                <p>Sử dụng CSS kết hợp với các thẻ HTML5 giúp trang web trở nên chuyên nghiệp, linh hoạt, dễ bảo trì và tối ưu hóa hiển thị trên nhiều thiết bị khác nhau.</p>
+            </article>
+        </section>
+
+        <!-- Thanh bên (Sidebar) -->
+        <aside>
+            <h3>Danh mục</h3>
+            <ul>
+                <li><a href="#">Lập trình Web</a></li>
+                <li><a href="#">CSS &amp; Flexbox</a></li>
+                <li><a href="#">JavaScript Cơ Bản</a></li>
+                <li><a href="#">Kinh nghiệm thực tập</a></li>
+            </ul>
+        </aside>
     </div>
+
+    <!-- Chân trang -->
+    <footer>
+        <p>&copy; 2026 Vũ Tử Quang. Bản quyền thuộc về tác giả.</p>
+    </footer>
 </body>
 </html>
