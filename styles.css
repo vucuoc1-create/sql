@@ -1,4 +1,4 @@
-/* Rest CSS cơ bản */
+/* Thiết lập chung và Box-sizing */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,262 +6,162 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f0f2f5;
-    color: #050505;
-    /* Đẩy toàn bộ body xuống để không bị Fixed Header che mất nội dung */
-    padding-top: 56px; 
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
-/* ==========================================
-   1. FIXED HEADER
-   ========================================== */
-.fb-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 56px;
-    background-color: #ffffff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 16px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 1000; /* Luôn nổi lên trên cùng khi cuộn */
+/* 1. Header Styling */
+.header {
+    background-color: #2c3e50;
+    color: #ffffff;
+    padding: 30px 20px;
+    text-align: center;
 }
 
-.header-left {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.fb-logo {
-    color: #1877f2;
+.header h1 {
     font-size: 28px;
-    font-weight: bold;
-    letter-spacing: -1px;
+    margin-bottom: 8px;
 }
 
-.search-input {
-    background-color: #f0f2f5;
-    border: none;
-    border-radius: 50px;
-    padding: 10px 16px;
-    outline: none;
-    font-size: 14px;
+/* 2. Navbar Styling */
+.navbar {
+    background-color: #34495e;
 }
 
-.header-center {
+.navbar ul {
+    list-style: none;
     display: flex;
-    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-.nav-icon {
-    font-size: 20px;
-    padding: 8px 24px;
-    border-radius: 8px;
+.navbar li a {
+    color: #ffffff;
+    display: block;
+    padding: 12px 20px;
     text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
 }
 
-.nav-icon.active {
-    border-bottom: 3px solid #1877f2;
+.navbar li a:hover {
+    background-color: #1abc9c;
 }
 
-.header-right {
+/* 3. Container Layout (Desktop mặc định) */
+.container {
     display: flex;
-    align-items: center;
-    gap: 10px;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 15px;
+    gap: 20px;
 }
 
-.user-name {
-    font-weight: 600;
-    font-size: 14px;
+/* Main Content */
+.main-content {
+    flex: 3;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.circle-btn {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    border: none;
-    background-color: #e4e6eb;
-    cursor: pointer;
+.main-content h2 {
+    color: #2c3e50;
+    margin-bottom: 15px;
 }
 
-/* ==========================================
-   2. BỐ CỤC KHUNG CHÍNH (CONTAINER)
-   ========================================== */
-.fb-container {
+.card-grid {
     display: flex;
-    justify-content: space-between;
-    padding: 16px;
-    max-width: 1280px;
-    margin: 0 auto;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
 }
 
-/* ==========================================
-   3. SIDEBAR TRÁI VÀ PHẢI
-   ========================================== */
-aside {
-    width: 280px;
-    position: sticky;
-    top: 72px;
-    height: calc(100vh - 80px);
+.card {
+    flex: 1;
+    min-width: 200px;
+    background-color: #ecf0f1;
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 4px solid #1abc9c;
 }
 
-.sidebar-left ul, .sidebar-right ul {
+.card h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #2c3e50;
+}
+
+/* Sidebar */
+.sidebar {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    height: fit-content;
+}
+
+.sidebar h3 {
+    color: #2c3e50;
+    margin-bottom: 12px;
+    border-bottom: 2px solid #1abc9c;
+    padding-bottom: 5px;
+}
+
+.sidebar ul {
     list-style: none;
 }
 
-.sidebar-left li a {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 10px;
+.sidebar li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.sidebar li a {
+    color: #34495e;
     text-decoration: none;
-    color: #050505;
-    font-weight: 600;
-    font-size: 14px;
-    border-radius: 8px;
 }
 
-.sidebar-left li a:hover, .sidebar-right li:hover {
-    background-color: #e4e6eb;
+.sidebar li a:hover {
+    color: #1abc9c;
 }
 
-.sidebar-right h3 {
-    color: #65676b;
-    font-size: 16px;
-    margin-bottom: 12px;
-    padding-left: 8px;
-}
-
-.sidebar-right li {
-    padding: 10px;
-    border-radius: 8px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: 500;
-}
-
-.status-dot {
-    width: 9px;
-    height: 9px;
-    background-color: #31a24c;
-    border-radius: 50%;
+/* 4. Footer Styling */
+.footer {
+    background-color: #2c3e50;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
 }
 
 /* ==========================================
-   4. NỘI DUNG CHÍNH (NEWS FEED)
+   RESPONSIVE WEB DESIGN (MEDIA QUERIES)
    ========================================== */
-.main-content {
-    flex: 1;
-    max-width: 590px;
-    margin: 0 16px;
-}
 
-.create-post, .feed-card {
-    background-color: #ffffff;
-    border-radius: 8px;
-    padding: 12px 16px;
-    margin-bottom: 16px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-}
+/* Khi màn hình nhỏ hơn hoặc bằng 768px (Tablet & Mobile) */
+@media screen and (max-width: 768px) {
+    /* Chuyển container từ hàng ngang (flex) sang cột dọc */
+    .container {
+        flex-direction: column;
+    }
 
-.post-top {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
+    /* Menu chuyển thành dạng xếp chồng hoặc dàn đều */
+    .navbar ul {
+        flex-direction: column;
+        text-align: center;
+    }
 
-.avatar {
-    width: 40px;
-    height: 40px;
-    background-color: #1877f2;
-    color: #ffffff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-}
+    .navbar li a {
+        border-bottom: 1px solid #4e6d8d;
+    }
 
-.post-input {
-    flex: 1;
-    background-color: #f0f2f5;
-    border: none;
-    border-radius: 20px;
-    padding: 10px 16px;
-    outline: none;
-}
-
-.divider {
-    margin: 12px 0;
-    border: 0;
-    border-top: 1px solid #e4e6eb;
-}
-
-.post-bottom {
-    display: flex;
-    justify-content: space-around;
-}
-
-.action-btn {
-    background: transparent;
-    border: none;
-    font-weight: 600;
-    color: #65676b;
-    cursor: pointer;
-    padding: 8px;
-    border-radius: 6px;
-}
-
-.action-btn:hover {
-    background-color: #f0f2f5;
-}
-
-.card-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 12px;
-}
-
-.user-info h4 {
-    font-size: 15px;
-}
-
-.post-time {
-    font-size: 12px;
-    color: #65676b;
-}
-
-.card-body {
-    font-size: 15px;
-    line-height: 1.4;
-    margin-bottom: 12px;
-}
-
-.card-actions {
-    display: flex;
-    justify-content: space-around;
-    border-top: 1px solid #e4e6eb;
-    padding-top: 8px;
-}
-
-.card-actions button {
-    background: none;
-    border: none;
-    color: #65676b;
-    font-weight: 600;
-    cursor: pointer;
-    padding: 8px 16px;
-    border-radius: 4px;
-}
-
-.card-actions button:hover {
-    background-color: #f0f2f5;
+    /* Các thẻ card hiển thị theo chiều dọc */
+    .card-grid {
+        flex-direction: column;
+    }
 }
